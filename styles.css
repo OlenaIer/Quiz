@@ -1,0 +1,56 @@
+body {
+  border: 2px solid darkblue;
+  margin: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#quiz {
+  margin: 20px;
+  width: 600px;
+}
+
+.quiz-questions,
+.quiz-indicator,
+.quiz-results {
+  margin-bottom: 20px;
+}
+.quiz-questions-item-answers,
+.quiz-result-item-answers {
+  margin: 0;
+  padding: 0;
+}
+
+.quiz-questions-item-questions,
+.quiz-result-item-questions {
+  margin-bottom: 20px;
+}
+ul {
+  margin-bottom: 40px;
+}
+li {
+  list-style: none;
+}
+
+.btn-restart,
+.quiz-results {
+  display: none;
+}
+.questions--hidden,
+.indicator--hidden,
+.btn-next--hidden {
+  display: none;
+}
+
+.indicator--visible,
+.btn-restart--visible {
+  display: block;
+}
+
+.answer--invalid {
+  color: red;
+}
+
+.answer--valid {
+  color: green;
+}
