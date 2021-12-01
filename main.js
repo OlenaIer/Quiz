@@ -4,7 +4,7 @@ const quiz = document.querySelector("#quiz");
 const btnCheck = document.querySelector("#check");
 
 //CREATE QUESTIONS
-const createListItems = (element) => {
+const createListItems = (element, elementIndex) => {
   let listItemsString = "";
   let inputType = "radio";
   if (element.multiple) {
@@ -16,13 +16,13 @@ const createListItems = (element) => {
       <li>
         <label>
         
-          <input id="selectBox" name=${element.answers[answer]} type= ${inputType} value=${element.answers[answer].correctAnswer} />
+          <input id="selectBox" name=${elementIndex} type= ${inputType} value=${element.answers[answer].correctAnswer} />
           ${element.answers[answer].value}
         </label>
       </li>
       `;
   }
-  console.log(listItemsString);
+
   return listItemsString;
 };
 
@@ -30,87 +30,33 @@ const createAnswers = () => {
   for (let questionIndex = 0; questionIndex < DATA.length; questionIndex++) {
     let element = DATA[questionIndex];
 
-    quiz.innerHTML += `<div id="question" data-multi = ${element.multiple}
-   
-    > <h2> ${element.question} </h2> <ul> ${createListItems(
-      element
-    )} </ul> </div>`;
+    quiz.innerHTML += `<div id="question" > <h2> ${
+      element.question
+    } </h2> <ul> ${createListItems(element, questionIndex)} </ul> </div>`;
   }
 };
 
 createAnswers();
-// quiz.innerHTML = "";
-
-let counterRightAnswers = 0;
-let questions = quiz.querySelectorAll("[id='question']");
+//
 
 btnCheck.addEventListener("click", () => {
-  counterRightAnswers = 0;
+  // quiz.innerHTML += "";
+  let questions = quiz.querySelectorAll("[id='question']");
+
+  let counterRightAnswers = 0;
   questions.forEach((qstn) => {
-    // let inputElement = document.getElementsByTagName("input");
-    // let counter = 0;
-    // for (let i = 0; i < inputElement.length; i++) {
-    //   if (inputElement[i].type === "checkbox") {
-    //     if (
-    //       inputElement[i].checked === true &&
-    //       inputElement[i].correctAnswer === true
-    //     ) {
-    //       counter++;
-    //       console.log(counter);
-    //       console.log("Salute");
-    //     }
-    //   }
-    //   if (counter === 3) {
-    //     counterRightAnswers++;
-    //     console.log("Hej");
-    //   }
-    // }
-    // console.log(counter);
+    let inputElements = qstn.querySelectorAll("[id='selectBox']");
 
-    // if (qstn.multiple) {
-    if (qstn.type === "checkbox") {
-      let correct = false;
-      // let selectBox = document.querySelectorAll("#selectBox");
-
-      qstn.querySelectorAll("#selectBox").forEach((input) => {
-        // .querySelectorAll("#selectBox")
-        console.log((input.checked != input.value) === true);
-        console.log("Shit!");
-        if (input.checked != input.value) {
-          correct = false;
-          console.log("Shit 2!");
-        }
-      });
-      if (correct) {
-        counterRightAnswers++;
-        console.log("multiple correct");
+    let correctAnswer = true;
+    for (let i = 0; i < inputElements.length; i++) {
+      let isValueTrue = Number(inputElements[i].value) === 1;
+      if (inputElements[i].checked !== isValueTrue) {
+        correctAnswer = false;
       }
-    } else {
-      qstn.querySelectorAll("#selectBox").forEach((input) => {
-        //console.log(input.value);
-        if (input.checked && input.value) {
-          counterRightAnswers++;
-          console.log("ggggg");
-        }
-      });
     }
+
+    if (correctAnswer) counterRightAnswers++;
   });
+
   quiz.innerHTML += `<p>Right : ${counterRightAnswers}</p>`;
 });
-
-// let checkboxes = () => {
-//   let inputElement = document.getElementsByTagName("input");
-//   let counter = 0;
-//   for (let i = 0; i < inputElement.length; i++) {
-//     if (
-//       inputElement[i].type === "checkbox" &&
-//       inputElement[i].checked == true
-//     ) {
-//       counter++;
-//       console.log(counter);
-//     }
-//   }
-//   if (counter === 3) {
-//     counterRightAnswers++;
-//   }
-// };

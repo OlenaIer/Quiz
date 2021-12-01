@@ -6,50 +6,44 @@ const DATA = [
       "<b>Question 1:</b><p> Salsa is a Latin dance associated with the music genre of the same name</p>",
     answers: [
       {
-        id: "1",
         value: "True",
-        correctAnswer: true,
+        correctAnswer: 1,
       },
       {
-        id: "2",
         value: "False",
-        correctAnswer: false,
+        correctAnswer: 0,
       },
     ],
     multiple: false,
   },
 
-  // `{
+  // {
   //   question:
   //     "<b>Question 2:</b><p> Salsa was first popularized in the Sweden in the 1960s in Malmö City</p>",
   //   answers: [
   //     {
-  //       id: "3",
-  //       value: "True",
-  //       correctAnswer: false,
+  //       value: "1",
+  //       correctAnswer: 0,
   //     },
   //     {
-  //       id: "4",
-  //       value: "False",
-  //       correctAnswer: true,
+  //       value: "0",
+  //       correctAnswer: 1,
   //     },
   //   ],
   //   multiple: false,
-  // },`
+  // },
 
   // {
   //   question:
   //     "<b>Question 3:</b><p> Salsa's tempo ranges from about 150 bpm (beats per minute) to around 250 bpm</p>",
   //   answers: [
   //     {
-  //       id: "5",
-  //       value: "True",
-  //       correctAnswer: true,
+  //       value: "1",
+  //       correctAnswer: 1,
   //     },
   //     {
-  //       id: "6",
-  //       value: "False",
-  //       correctAnswer: false,
+  //       value: "0",
+  //       correctAnswer: 0,
   //     },
   //   ],
   // multiple: false,
@@ -59,19 +53,16 @@ const DATA = [
   //     "<b>Question 4:</b><p> The basic Salsa dance rhythm consists of taking _____ steps for every four beats of music</p>",
   //   answers: [
   //     {
-  //       id: "7",
   //       value: "four",
-  //       correctAnswer: false,
+  //       correctAnswer: 0,
   //     },
   //     {
-  //       id: "8",
   //       value: "three",
-  //       correctAnswer: true,
+  //       correctAnswer: 1,
   //     },
   //     {
-  //       id: "9",
   //       value: "two",
-  //       correctAnswer: false,
+  //       correctAnswer: 0,
   //     },
   //   ],
   // multiple: false,
@@ -82,19 +73,16 @@ const DATA = [
   //     "<b>Question 5:</b><p> One of the early influential instructors in salsa was ______. </p>",
   //   answers: [
   //     {
-  //       id: "10",
-  //       value: "Bil Gates",
-  //       correctAnswer: false,
+  //       value: "Bill Gates",
+  //       correctAnswer: 0,
   //     },
   //     {
-  //       id: "11",
   //       value: "Elon Musk",
-  //       correctAnswer: false,
+  //       correctAnswer: 0,
   //     },
   //     {
-  //       id: "12",
   //       value: "Eddie Torres",
-  //       correctAnswer: true,
+  //       correctAnswer: 1,
   //     },
   //   ],
   // multiple: false,
@@ -105,19 +93,16 @@ const DATA = [
       "<b>Question 6:</b><p> Salsa is an effective and fun form of _______. </p>",
     answers: [
       {
-        id: "13",
         value: "cardio",
-        correctAnswer: true,
+        correctAnswer: 1,
       },
       {
-        id: "14",
         value: "yoga",
-        correctAnswer: false,
+        correctAnswer: 0,
       },
       {
-        id: "15",
         value: "weight training",
-        correctAnswer: false,
+        correctAnswer: 0,
       },
     ],
     multiple: false,
@@ -128,29 +113,24 @@ const DATA = [
       "<b>Question 7:</b><p> Salsa is an amalgamation of Cuban dances such: </p>",
     answers: [
       {
-        id: "16",
         value: "Mambo",
-        correctAnswer: true,
+        correctAnswer: 1,
       },
       {
-        id: "17",
         value: "Pachanga",
-        correctAnswer: true,
+        correctAnswer: 1,
       },
       {
-        id: "18",
         value: "Kadrilj",
-        correctAnswer: false,
+        correctAnswer: 0,
       },
       {
-        id: "19",
         value: "Hambo",
-        correctAnswer: false,
+        correctAnswer: 0,
       },
       {
-        id: "20",
         value: "Rumba",
-        correctAnswer: true,
+        correctAnswer: 1,
       },
     ],
     multiple: true,
