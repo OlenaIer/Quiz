@@ -17,76 +17,76 @@ const DATA = [
     multiple: false,
   },
 
-  // {
-  //   question:
-  //     "<b>Question 2:</b><p> Salsa was first popularized in the Sweden in the 1960s in Malmö City</p>",
-  //   answers: [
-  //     {
-  //       value: "1",
-  //       correctAnswer: 0,
-  //     },
-  //     {
-  //       value: "0",
-  //       correctAnswer: 1,
-  //     },
-  //   ],
-  //   multiple: false,
-  // },
+  {
+    question:
+      "<b>Question 2:</b><p> Salsa was first popularized in the Sweden in the 1960s in Malmö City</p>",
+    answers: [
+      {
+        value: "True",
+        correctAnswer: 0,
+      },
+      {
+        value: "False",
+        correctAnswer: 1,
+      },
+    ],
+    multiple: false,
+  },
 
-  // {
-  //   question:
-  //     "<b>Question 3:</b><p> Salsa's tempo ranges from about 150 bpm (beats per minute) to around 250 bpm</p>",
-  //   answers: [
-  //     {
-  //       value: "1",
-  //       correctAnswer: 1,
-  //     },
-  //     {
-  //       value: "0",
-  //       correctAnswer: 0,
-  //     },
-  //   ],
-  // multiple: false,
-  // },
-  // {
-  //   question:
-  //     "<b>Question 4:</b><p> The basic Salsa dance rhythm consists of taking _____ steps for every four beats of music</p>",
-  //   answers: [
-  //     {
-  //       value: "four",
-  //       correctAnswer: 0,
-  //     },
-  //     {
-  //       value: "three",
-  //       correctAnswer: 1,
-  //     },
-  //     {
-  //       value: "two",
-  //       correctAnswer: 0,
-  //     },
-  //   ],
-  // multiple: false,
-  // },
+  {
+    question:
+      "<b>Question 3:</b><p> Salsa's tempo ranges from about 150 bpm (beats per minute) to around 250 bpm</p>",
+    answers: [
+      {
+        value: "True",
+        correctAnswer: 1,
+      },
+      {
+        value: "False",
+        correctAnswer: 0,
+      },
+    ],
+    multiple: false,
+  },
+  {
+    question:
+      "<b>Question 4:</b><p> The basic Salsa dance rhythm consists of taking _____ steps for every four beats of music</p>",
+    answers: [
+      {
+        value: "four",
+        correctAnswer: 0,
+      },
+      {
+        value: "three",
+        correctAnswer: 1,
+      },
+      {
+        value: "two",
+        correctAnswer: 0,
+      },
+    ],
+    multiple: false,
+  },
 
-  // {
-  //   question:
-  //     "<b>Question 5:</b><p> One of the early influential instructors in salsa was ______. </p>",
-  //   answers: [
-  //     {
-  //       value: "Bill Gates",
-  //       correctAnswer: 0,
-  //     },
-  //     {
-  //       value: "Elon Musk",
-  //       correctAnswer: 0,
-  //     },
-  //     {
-  //       value: "Eddie Torres",
-  //       correctAnswer: 1,
-  //     },
-  //   ],
-  // multiple: false,
-  // },
+  {
+    question:
+      "<b>Question 5:</b><p> One of the early influential instructors in salsa was ______. </p>",
+    answers: [
+      {
+        value: "Bill Gates",
+        correctAnswer: 0,
+      },
+      {
+        value: "Elon Musk",
+        correctAnswer: 0,
+      },
+      {
+        value: "Eddie Torres",
+        correctAnswer: 1,
+      },
+    ],
+    multiple: false,
+  },
 
   {
     question:
