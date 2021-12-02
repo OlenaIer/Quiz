@@ -1,4 +1,4 @@
-let localResults = {};
+// let localResults = {};
 
 const quiz = document.querySelector("#quiz");
 const btnCheck = document.querySelector("#check");
@@ -42,15 +42,18 @@ createAnswers();
 let isDarkMode = false;
 darkMode.addEventListener("click", () => {
   if (!isDarkMode) {
-    darkMode.textContent = "Light";
-    document.querySelector("body").style.backgroundColor = "black";
-    document.querySelector("body").style.color = "white";
+    // darkMode.textContent = "Light";
+    document.querySelector("body").style.backgroundColor = "#303133";
+    document.querySelector("body").style.color = "#efefef";
+    darkMode.innerHTML = '<i class="fas fa-sun"></i> ' + "Light";
     isDarkMode = true;
   } else {
+    // <i class="fas fa-moon"></i>;
     isDarkMode = false;
-    darkMode.textContent = "Dark";
-    document.querySelector("body").style.backgroundColor = "white";
-    document.querySelector("body").style.color = "black";
+
+    document.querySelector("body").style.backgroundColor = "#e4e4e7";
+    document.querySelector("body").style.color = "#27272a";
+    darkMode.innerHTML = '<i class="fas fa-moon"></i> ' + "Dark";
   }
 });
 
