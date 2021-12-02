@@ -78,14 +78,21 @@ btnCheck.addEventListener("click", () => {
 
   let uppdateResult = () => {
     let result = document.querySelector("#result");
+    let message = document.querySelector("#message");
     result.textContent = `Right answers: ${counterRightAnswers}`;
+    message.textContent = "";
+
     let countQuestions = DATA.length;
     if (counterRightAnswers <= countQuestions / 3) {
-      result.style.backgroundColor = "red";
+      result.style.color = "red";
+      message.textContent = `Don't worry! It's hard to know all 😉 Try again! I am sure you will be better!`;
     } else if (counterRightAnswers <= countQuestions - 2) {
-      result.style.backgroundColor = "grey";
+      result.style.color = "orange";
+      message.textContent = `
+      Not bad!👌 You really know a lot about salsa but not enought 😊 Try again!`;
     } else {
-      result.style.backgroundColor = "green";
+      result.style.color = "green";
+      message.textContent = `Congratulation! You are master in the question! 🎉 `;
     }
   };
   uppdateResult();
