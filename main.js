@@ -2,6 +2,7 @@ let localResults = {};
 
 const quiz = document.querySelector("#quiz");
 const btnCheck = document.querySelector("#check");
+const darkMode = document.querySelector("#darkMode");
 
 //CREATE QUESTIONS
 const createListItems = (element, elementIndex) => {
@@ -38,6 +39,20 @@ const createAnswers = () => {
 
 createAnswers();
 //
+let isDarkMode = false;
+darkMode.addEventListener("click", () => {
+  if (!isDarkMode) {
+    darkMode.textContent = "Light";
+    document.querySelector("body").style.backgroundColor = "black";
+    document.querySelector("body").style.color = "white";
+    isDarkMode = true;
+  } else {
+    isDarkMode = false;
+    darkMode.textContent = "Dark";
+    document.querySelector("body").style.backgroundColor = "white";
+    document.querySelector("body").style.color = "black";
+  }
+});
 
 btnCheck.addEventListener("click", () => {
   // quiz.innerHTML += "";
@@ -58,5 +73,17 @@ btnCheck.addEventListener("click", () => {
     if (correctAnswer) counterRightAnswers++;
   });
 
-  quiz.innerHTML += `<p>Right : ${counterRightAnswers}</p>`;
+  let uppdateResult = () => {
+    let result = document.querySelector("#result");
+    result.textContent = `Right answers: ${counterRightAnswers}`;
+    let countQuestions = DATA.length;
+    if (counterRightAnswers <= countQuestions / 3) {
+      result.style.backgroundColor = "red";
+    } else if (counterRightAnswers <= countQuestions - 2) {
+      result.style.backgroundColor = "grey";
+    } else {
+      result.style.backgroundColor = "green";
+    }
+  };
+  uppdateResult();
 });
