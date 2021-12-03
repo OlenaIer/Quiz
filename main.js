@@ -1,8 +1,11 @@
-// let localResults = {};
-
 const quiz = document.querySelector("#quiz");
 const btnCheck = document.querySelector("#check");
 const darkMode = document.querySelector("#darkMode");
+const btnAgain = document.querySelector("#tryAgain");
+const btnQuit = document.querySelector("#quit");
+const header = document.querySelector("#header1");
+
+btnCheck.hidden = false;
 
 //CREATE QUESTIONS
 const createListItems = (element, elementIndex) => {
@@ -27,6 +30,7 @@ const createListItems = (element, elementIndex) => {
   return listItemsString;
 };
 
+//CREATE ANSWERS
 const createAnswers = () => {
   for (let questionIndex = 0; questionIndex < DATA.length; questionIndex++) {
     let element = DATA[questionIndex];
@@ -38,17 +42,16 @@ const createAnswers = () => {
 };
 
 createAnswers();
-//
+
+//DARK MODE
 let isDarkMode = false;
 darkMode.addEventListener("click", () => {
   if (!isDarkMode) {
-    // darkMode.textContent = "Light";
     document.querySelector("body").style.backgroundColor = "#303133";
     document.querySelector("body").style.color = "#efefef";
     darkMode.innerHTML = '<i class="fas fa-sun"></i> ' + "Light";
     isDarkMode = true;
   } else {
-    // <i class="fas fa-moon"></i>;
     isDarkMode = false;
 
     document.querySelector("body").style.backgroundColor = "#e4e4e7";
@@ -57,8 +60,8 @@ darkMode.addEventListener("click", () => {
   }
 });
 
+//BUTTON GET RESULT
 btnCheck.addEventListener("click", () => {
-  // quiz.innerHTML += "";
   let questions = quiz.querySelectorAll("[id='question']");
 
   let counterRightAnswers = 0;
@@ -76,24 +79,50 @@ btnCheck.addEventListener("click", () => {
     if (correctAnswer) counterRightAnswers++;
   });
 
+  //UPPDATE RESULT
+  let result = document.querySelector("#result");
+  let message = document.querySelector("#message");
   let uppdateResult = () => {
-    let result = document.querySelector("#result");
-    let message = document.querySelector("#message");
     result.textContent = `Right answers: ${counterRightAnswers}`;
     message.textContent = "";
 
     let countQuestions = DATA.length;
-    if (counterRightAnswers <= countQuestions / 3) {
+    if (counterRightAnswers <= countQuestions / 2) {
       result.style.color = "red";
       message.textContent = `Don't worry! It's hard to know all 😉 Try again! I am sure you will be better!`;
-    } else if (counterRightAnswers <= countQuestions - 2) {
+    } else if (counterRightAnswers === countQuestions) {
+      result.style.color = "green";
+      message.textContent = `Congratulation! 🎉 You are master in the question! 🏆`;
+    } else {
       result.style.color = "orange";
       message.textContent = `
-      Not bad!👌 You really know a lot about salsa but not enought 😊 Try again!`;
-    } else {
-      result.style.color = "green";
-      message.textContent = `Congratulation! You are master in the question! 🎉 `;
+      Not bad!👌 You really know a lot about salsa 😊 Would you like to try again?`;
     }
   };
   uppdateResult();
+  btnAgain.hidden = false;
+  btnCheck.hidden = true;
+  btnQuit.hidden = false;
+});
+
+//PLAY AGAIN
+btnAgain.addEventListener("click", () => {
+  header.textContent = "Hi and welcome to my quiz!";
+  quiz.textContent = "";
+  result.textContent = "";
+  message.textContent = "";
+  createAnswers();
+  btnAgain.hidden = true;
+  btnCheck.hidden = false;
+  btnQuit.hidden = true;
+});
+
+btnQuit.addEventListener("click", () => {
+  header.textContent = "";
+  result.textContent = "";
+  message.textContent = "";
+  quiz.innerHTML = `<h1>Thank you for your time and welcome back! See you soon!`;
+  btnAgain.hidden = false;
+  btnCheck.hidden = true;
+  btnQuit.hidden = true;
 });

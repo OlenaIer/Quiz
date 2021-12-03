@@ -13,19 +13,21 @@
   </head>
   <body>
     <header>
-      <h1>Hi and welcome to my quiz!</h1>
+      <h1 id="header1">Hi and welcome to my quiz!</h1>
       <button id="darkMode"><i class="fas fa-moon"></i>Dark</button>
     </header>
 
     <main>
       <div id="quiz"></div>
-      <h3 id="result"></h3>
-      <p id="message"></p>
 
-      <button id="check">Check Quiz</button>
+      <button id="check" hidden>Get results!</button>
+      <button id="tryAgain" hidden>Try again!</button>
+      <button id="quit" hidden>Quit</button>
     </main>
     <div class="picture">
       <img src="picture.png" alt="Salsa dancing salsa" />
+      <h3 id="result"></h3>
+      <p id="message"></p>
     </div>
 
     <script src="data.js"></script>

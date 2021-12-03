@@ -1,7 +1,5 @@
 body {
   margin: 20px;
-  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif; */
   font-family: Quicksand, Helvetica, Arial;
 
   /* cursive; */
@@ -10,7 +8,6 @@ body {
 }
 header {
   display: flex;
-  /* gap: 100px; */
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -18,8 +15,6 @@ header {
 
 #darkMode {
   font-size: large;
-  /* margin-left: 20px;
-  margin-right: 40px; */
   border: none;
 
   width: 100px;
@@ -43,14 +38,11 @@ body ul {
 }
 
 .picture {
-  /* display: inline-block; */
-
   vertical-align: top;
   float: right;
 }
 
 #quiz {
-  /* display: flex; */
   margin: 20px;
   width: 730px;
 }
@@ -63,7 +55,6 @@ h2 {
 }
 
 ul {
-  /* margin-bottom: 40px; */
   margin-top: 0;
 }
 li {
@@ -72,21 +63,15 @@ li {
 p {
   margin-top: 10px;
 }
-#check {
+#check,
+#tryAgain,
+#quit {
   font-size: large;
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 1300px) {
   img {
     display: none;
-    /* visibility: hidden; */
   }
 }
-
-/* .answer--invalid {
-  color: red;
-}
-
-.answer--valid {
-  color: green;
-}  */
